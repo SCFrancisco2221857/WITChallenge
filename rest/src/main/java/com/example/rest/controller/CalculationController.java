@@ -18,7 +18,7 @@ import java.math.BigDecimal;
 public class CalculationController {
 
     @Autowired
-    private KafkaTemplate<String, CalculationRequest> kafkaTemplate;
+    private KafkaTemplate<String, CalculationRequest> calculationRequestKafkaTemplate;
 
     @Autowired
     private CalculationResponseConsumer responseConsumer;
@@ -27,14 +27,15 @@ public class CalculationController {
     public ResponseEntity<CalculationResponse> sum(@RequestParam BigDecimal firstOperand, @RequestParam BigDecimal secondOperand) {
         System.out.println("Received sum request with operands: " + firstOperand + " and " + secondOperand);
         CalculationRequest request = new CalculationRequest("sum", firstOperand, secondOperand);
-        kafkaTemplate.send("calculation-topic", request.getIdRequest(), request);
+        calculationRequestKafkaTemplate.send("calculation-topic", request.getIdRequest(), request);
+
         while (responseConsumer.getResponse(request.getIdRequest()) == null) {
             System.out.println("Waiting for response for request ID: " + request.getIdRequest());
             try {
-                Thread.sleep(100); // Wait for the response to be available
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
-                return ResponseEntity.status(500).build(); // Handle interruption
+                return ResponseEntity.status(500).build();
             }
         }
         CalculationResponse response = responseConsumer.getResponse(request.getIdRequest());

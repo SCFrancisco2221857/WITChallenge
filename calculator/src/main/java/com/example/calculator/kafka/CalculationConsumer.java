@@ -14,14 +14,13 @@ import java.math.BigDecimal;
 public class CalculationConsumer {
 
     @Autowired
-    private KafkaTemplate<String, CalculationResponse> kafkaTemplate;
-
+    private KafkaTemplate<String, CalculationResponse> calculationResponseKafkaTemplate;
 
     @KafkaListener(topics = "calculation-topic", groupId = "calculation-group")
     public void consume(ConsumerRecord<String, CalculationRequest> record){
         System.out.println("Received calculation request: " + record.value());
         CalculationRequest request = record.value();
-        BigDecimal result= null;
+        BigDecimal result = null;
 
         switch(request.getOperation()){
             case "sum":
@@ -39,10 +38,12 @@ public class CalculationConsumer {
                 }
                 result = request.getFirstOperand().divide(request.getSecondOperand());
                 break;
+            default:
+                throw new UnsupportedOperationException("Operation not supported: " + request.getOperation());
         }
 
         CalculationResponse response = new CalculationResponse(request.getIdRequest(), result);
-        kafkaTemplate.send("calculation-response-topic", response.getIdRequest(), response);
-
+        calculationResponseKafkaTemplate.send("calculation-response-topic", response.getIdRequest(), response);
     }
 }
+
