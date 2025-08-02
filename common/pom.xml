@@ -20,7 +20,6 @@
         <dependency>
             <groupId>org.springframework.kafka</groupId>
             <artifactId>spring-kafka</artifactId>
-            <!-- sem versão aqui, será herdada do parent -->
         </dependency>
 
 
@@ -31,7 +30,6 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- DEPENDÊNCIA DE TESTE -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>

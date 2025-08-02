@@ -10,7 +10,7 @@ import java.util.UUID;
 @NoArgsConstructor
 public class CalculationRequest {
 
-    private String operation;
+    private Operation operation;
 
     //arbitrary precision signed decimal numbers
     private BigDecimal firstOperand;
@@ -20,7 +20,7 @@ public class CalculationRequest {
     //devido a ser gets criar um novo id a cada vez que é criado um objeto
     private String idRequest;
 
-    public CalculationRequest(String operation, BigDecimal firstOperand, BigDecimal secondOperand) {
+    public CalculationRequest(Operation operation, BigDecimal firstOperand, BigDecimal secondOperand) {
         this.operation = operation;
         this.firstOperand = firstOperand;
         this.secondOperand = secondOperand;

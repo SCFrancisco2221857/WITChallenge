@@ -30,10 +30,6 @@ public class KafkaProducerConfig {
         return new DefaultKafkaProducerFactory<>(commonConfig());
     }
 
-    @Bean
-    public KafkaTemplate<String, CalculationRequest> calculationRequestKafkaTemplate() {
-        return new KafkaTemplate<>(calculationRequestProducerFactory());
-    }
 
     @Bean
     public ProducerFactory<String, CalculationResponse> calculationResponseProducerFactory() {
@@ -41,7 +37,13 @@ public class KafkaProducerConfig {
     }
 
     @Bean
-    public KafkaTemplate<String, CalculationResponse> calculationResponseKafkaTemplate() {
-        return new KafkaTemplate<>(calculationResponseProducerFactory());
+    public KafkaTemplate<String, CalculationRequest> calculationRequestKafkaTemplate(ProducerFactory<String, CalculationRequest> calculationRequestProducerFactory) {
+        return new KafkaTemplate<>(calculationRequestProducerFactory);
     }
+
+    @Bean
+    public KafkaTemplate<String, CalculationResponse> calculationResponseKafkaTemplate(ProducerFactory<String, CalculationResponse> calculationResponseProducerFactory) {
+        return new KafkaTemplate<>(calculationResponseProducerFactory);
+    }
+
 }
