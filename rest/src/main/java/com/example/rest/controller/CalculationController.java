@@ -24,6 +24,10 @@ public class CalculationController {
 
     @GetMapping("/sum")
     public ResponseEntity<BigDecimal> sum(@RequestParam BigDecimal a, @RequestParam BigDecimal b) {
+        if (a == null || b == null) {
+            return ResponseEntity.badRequest().body(null);
+        }
+
         return operationService.handleOperation(Operation.SUM, a, b);
     }
 

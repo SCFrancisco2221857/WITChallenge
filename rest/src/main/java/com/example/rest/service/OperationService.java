@@ -32,6 +32,7 @@ public class OperationService {
             return ResponseEntity.badRequest().body(null);
         }
 
+
         CalculationRequest request = new CalculationRequest(operation, a, b);
 
         CompletableFuture<CalculationResponse> futureResponse = responseConsumer.getFuture(request.getIdRequest());
