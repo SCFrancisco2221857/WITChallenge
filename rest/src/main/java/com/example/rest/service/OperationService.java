@@ -26,9 +26,13 @@ public class OperationService {
         this.responseConsumer = responseConsumer;
     }
 
-        public ResponseEntity<BigDecimal> handleOperation(String operation, BigDecimal a, BigDecimal b) {
+    public ResponseEntity<BigDecimal> handleOperation(Operation operation, BigDecimal a, BigDecimal b) {
         System.out.println("Received " + operation + " request with operands: " + a + " and " + b);
-        CalculationRequest request = new CalculationRequest(Operation.fromString(operation), a, b);
+        if(operation == null || a == null || b == null) {
+            return ResponseEntity.badRequest().body(null);
+        }
+
+        CalculationRequest request = new CalculationRequest(operation, a, b);
 
         CompletableFuture<CalculationResponse> futureResponse = responseConsumer.getFuture(request.getIdRequest());
         calculationRequestKafkaTemplate.send("calculation-topic", request.getIdRequest(), request);

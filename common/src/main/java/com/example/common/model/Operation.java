@@ -23,4 +23,12 @@ public enum Operation {
         }
         throw new IllegalArgumentException("Unknown operation: " + operation);
     }
+    public static boolean isValidOperation(String operation) {
+        for (Operation op : Operation.values()) {
+            if (op.operation.equalsIgnoreCase(operation)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

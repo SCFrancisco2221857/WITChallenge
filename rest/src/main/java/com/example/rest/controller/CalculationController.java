@@ -1,6 +1,7 @@
 package com.example.rest.controller;
 
 
+import com.example.common.model.Operation;
 import com.example.rest.service.OperationService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,22 +24,22 @@ public class CalculationController {
 
     @GetMapping("/sum")
     public ResponseEntity<BigDecimal> sum(@RequestParam BigDecimal a, @RequestParam BigDecimal b) {
-        return operationService.handleOperation("sum", a, b);
+        return operationService.handleOperation(Operation.SUM, a, b);
     }
 
     @GetMapping("/subtract")
     public ResponseEntity<BigDecimal> subtract(@RequestParam BigDecimal a, @RequestParam BigDecimal b) {
-        return operationService.handleOperation("subtract", a, b);
+        return operationService.handleOperation(Operation.SUBTRACT, a, b);
     }
 
     @GetMapping("/multiply")
     public ResponseEntity<BigDecimal> multiply(@RequestParam BigDecimal a, @RequestParam BigDecimal b) {
-        return operationService.handleOperation("multiply", a, b);
+        return operationService.handleOperation(Operation.MULTIPLY, a, b);
     }
 
     @GetMapping("/divide")
     public ResponseEntity<BigDecimal> divide(@RequestParam BigDecimal a, @RequestParam BigDecimal b) {
-        return operationService.handleOperation("divide", a, b);
+        return operationService.handleOperation(Operation.DIVIDE, a, b);
     }
 
 
