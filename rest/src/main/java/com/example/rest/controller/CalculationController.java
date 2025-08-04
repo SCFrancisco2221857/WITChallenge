@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.math.BigDecimal;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -50,10 +51,9 @@ public class CalculationController {
 
     @GetMapping("/divide")
     public ResponseEntity<BigDecimal> divide(@RequestParam BigDecimal a, @RequestParam BigDecimal b) {
-       logger.info("Received divide request with operands: {} and {}", a, b);
+        logger.info("Received divide request with operands: {} and {}", a, b);
         return operationService.handleOperation(Operation.DIVIDE, a, b);
     }
-
 
 
 }

@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CalculationResponseConsumerTest {
 
-    private final Cache<String, CalculationResponse> responseCache= Caffeine.newBuilder().build();
+    private final Cache<String, CalculationResponse> responseCache = Caffeine.newBuilder().build();
     private final ConcurrentHashMap<String, CompletableFuture<CalculationResponse>> responseFutures = new ConcurrentHashMap<>();
 
     private CalculationResponseConsumer calculationResponseConsumer;
@@ -54,7 +54,7 @@ class CalculationResponseConsumerTest {
 
 
     @Test
-    void testConsumeWitFutureNull(){
+    void testConsumeWitFutureNull() {
         String requestId = "test-request-id";
         CalculationResponse response = new CalculationResponse();
         response.setResult(BigDecimal.valueOf(100));

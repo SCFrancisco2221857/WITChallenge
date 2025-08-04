@@ -10,7 +10,6 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
 
-
 import java.math.BigDecimal;
 
 import static org.mockito.Mockito.when;
@@ -36,6 +35,7 @@ class CalculationControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string("15"));
     }
+
     @Test
     void testSubtract() throws Exception {
         when(operationService.handleOperation(Operation.SUBTRACT, BigDecimal.valueOf(10), BigDecimal.valueOf(5)))
@@ -45,6 +45,7 @@ class CalculationControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string("5"));
     }
+
     @Test
     void testMultiply() throws Exception {
         when(operationService.handleOperation(Operation.MULTIPLY, BigDecimal.valueOf(10), BigDecimal.valueOf(5)))
@@ -54,6 +55,7 @@ class CalculationControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string("50"));
     }
+
     @Test
     void testDivide() throws Exception {
         when(operationService.handleOperation(Operation.DIVIDE, BigDecimal.valueOf(10), BigDecimal.valueOf(5)))
