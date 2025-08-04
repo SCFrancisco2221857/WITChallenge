@@ -13,12 +13,19 @@ import java.math.BigDecimal;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
 @Service
 public class OperationService {
 
     private final KafkaTemplate<String, CalculationRequest> calculationRequestKafkaTemplate;
 
     private final CalculationResponseConsumer responseConsumer;
+
+    private static final Logger logger = LoggerFactory.getLogger(OperationService.class);
+
 
     public OperationService(KafkaTemplate<String, CalculationRequest> calculationRequestKafkaTemplate,
                             CalculationResponseConsumer responseConsumer) {
@@ -27,8 +34,10 @@ public class OperationService {
     }
 
     public ResponseEntity<BigDecimal> handleOperation(Operation operation, BigDecimal a, BigDecimal b) {
-        System.out.println("Received " + operation + " request with operands: " + a + " and " + b);
-        if(operation == null || a == null || b == null) {
+        logger.info("A executar operação");
+        logger.info("Received {} request with operands: {} and {}", operation, a, b);
+        if (operation == null || a == null || b == null) {
+            logger.error("Invalid operation or operands: {} {} {}", operation, a, b);
             return ResponseEntity.badRequest().body(null);
         }
 
@@ -40,10 +49,12 @@ public class OperationService {
 
         try {
             CalculationResponse response = futureResponse.get(5, TimeUnit.SECONDS);
-            System.out.println("Received response: " + response.getResult());
-            return ResponseEntity.ok(response.getResult());
+            logger.info("Received response for request ID: {} with result: {}", request.getIdRequest(), response.getResult());
+            return ResponseEntity.ok()
+                    .header("X-Request-ID", response.getIdRequest())
+                    .body(response.getResult());
         } catch (Exception e) {
-            System.err.println("Error waiting for response: " + e.getMessage());
+            logger.error("Error while waiting for response: {}", e.getMessage(), e);
             return ResponseEntity.status(504).body(null);
         }
     }

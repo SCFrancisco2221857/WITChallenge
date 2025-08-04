@@ -108,4 +108,6 @@ class OperationServiceTest {
                 any(CalculationRequest.class)
         );
     }
+
+
 }

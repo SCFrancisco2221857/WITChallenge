@@ -1,6 +1,6 @@
 # Calculadora WIT Challenge
 
-Este projeto implementa um microserviço para realizar operações matemáticas (soma, subtração, multiplicação e divisão) através de APIs REST com comunicação assíncrona através de Kafka. Toda a infraestrutura está hospedade no Docker.
+Este projeto implementa um microserviço para realizar operações matemáticas (soma, subtração, multiplicação e divisão) através de APIs REST com comunicação através de Kafka. Toda a infraestrutura está hospedade no Docker.
 
 ## Requisitos
 - Docker
