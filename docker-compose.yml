@@ -2,6 +2,7 @@ services:
   zookeeper:
     image: confluentinc/cp-zookeeper:7.4.0
     container_name: zookeeper
+    restart: always
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
@@ -9,6 +10,7 @@ services:
   kafka:
     image: confluentinc/cp-kafka:7.4.0
     container_name: kafka
+    restart: always
     depends_on:
       - zookeeper
     ports:
@@ -21,6 +23,7 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
 
   rest:
+    restart: always
     build:
       context: ./rest
       dockerfile: Dockerfile
@@ -34,6 +37,7 @@ services:
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
 
   calculator:
+    restart: always
     build:
       context: ./calculator
       dockerfile: Dockerfile

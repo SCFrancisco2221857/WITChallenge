@@ -37,22 +37,22 @@ class CalculationConsumerTest {
 
     @Test
     void testSum() {
-        simulateConsume(Operation.SUM, BigDecimal.valueOf(14), BigDecimal.valueOf(5), BigDecimal.valueOf(15));
+        simulateConsume(Operation.SUM, BigDecimal.valueOf(14), BigDecimal.valueOf(5), BigDecimal.valueOf(19));
     }
 
     @Test
     void testSubtract() {
-        simulateConsume(Operation.SUBTRACT, BigDecimal.valueOf(15), BigDecimal.valueOf(5), BigDecimal.valueOf(5));
+        simulateConsume(Operation.SUBTRACT, BigDecimal.valueOf(15), BigDecimal.valueOf(5), BigDecimal.valueOf(10));
     }
 
     @Test
     void testMultiply() {
-        simulateConsume(Operation.MULTIPLY, BigDecimal.valueOf(12), BigDecimal.valueOf(5), BigDecimal.valueOf(50));
+        simulateConsume(Operation.MULTIPLY, BigDecimal.valueOf(12), BigDecimal.valueOf(5), BigDecimal.valueOf(60));
     }
 
     @Test
     void testDivide() {
-        simulateConsume(Operation.DIVIDE, BigDecimal.valueOf(5), BigDecimal.valueOf(5), BigDecimal.valueOf(2));
+        simulateConsume(Operation.DIVIDE, BigDecimal.valueOf(5), BigDecimal.valueOf(5), BigDecimal.valueOf(1));
     }
 
     @Test

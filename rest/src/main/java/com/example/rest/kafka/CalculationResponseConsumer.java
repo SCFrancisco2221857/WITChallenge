@@ -28,22 +28,18 @@ public class CalculationResponseConsumer {
 
     @KafkaListener(topics = "calculation-response-topic", groupId = "calculation-response-group")
     public void consume(ConsumerRecord<String, CalculationResponse> record) {
-        MDC.put("x-request-id", record.key());
-        try {
-            logger.info("Received calculation response for request ID: {}", record.key());
-            String requestId = record.key();
-            CalculationResponse response = record.value();
 
-            responseCache.put(requestId, response);
+        logger.info("Received calculation response for request ID: {}", record.key());
+        String requestId = record.key();
+        CalculationResponse response = record.value();
 
-            CompletableFuture<CalculationResponse> future = responseFutures.get(requestId);
-            if (future != null) {
-                logger.info("Completing future for request ID: {}", requestId);
-                future.complete(response);
-                responseFutures.remove(requestId);
-            }
-        } finally {
-            MDC.remove("x-request-id");
+        responseCache.put(requestId, response);
+
+        CompletableFuture<CalculationResponse> future = responseFutures.get(requestId);
+        if (future != null) {
+            logger.info("Completing future for request ID: {}", requestId);
+            future.complete(response);
+            responseFutures.remove(requestId);
         }
     }
 

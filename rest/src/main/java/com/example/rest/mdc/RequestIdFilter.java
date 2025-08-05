@@ -27,12 +27,12 @@ public class RequestIdFilter extends OncePerRequestFilter {
                 requestId = UUID.randomUUID().toString();
             }
 
-            MDC.put("X-Request-ID", requestId);
+            MDC.put(REQUEST_ID_HEADER, requestId);
             response.setHeader(REQUEST_ID_HEADER, requestId);
 
             filterChain.doFilter(request, response);
         } finally {
-            MDC.remove("X-Request-ID");
+            MDC.remove(REQUEST_ID_HEADER);
         }
     }
 }

@@ -31,7 +31,7 @@ public class CalculationConsumer {
         CalculationRequest request = record.value();
 
         try {
-            MDC.put("x-request-id", request.getIdRequest());
+            MDC.put("X-Request-ID", request.getIdRequest());
             logger.info("Received calculation request: {}", request);
 
             BigDecimal result;
@@ -63,7 +63,7 @@ public class CalculationConsumer {
         } finally {
 
             logger.info("Finished processing request ID: {}", record.key());
-            MDC.remove("x-request-id");
+            MDC.remove("X-Request-ID");
 
         }
     }

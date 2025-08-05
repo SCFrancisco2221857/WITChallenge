@@ -29,10 +29,6 @@ public class CalculationController {
 
     @GetMapping("/sum")
     public ResponseEntity<BigDecimal> sum(@RequestParam BigDecimal a, @RequestParam BigDecimal b) {
-        if (a == null || b == null) {
-            logger.error("Invalid operands for sum operation: {} {}", a, b);
-            return ResponseEntity.badRequest().body(null);
-        }
         logger.info("Received sum request with operands: {} and {}", a, b);
         return operationService.handleOperation(Operation.SUM, a, b);
     }

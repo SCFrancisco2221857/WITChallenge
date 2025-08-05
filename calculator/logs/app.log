@@ -1,6 +1,6 @@
-2025-08-04 19:13:39 [main] INFO  c.e.c.CalculatorApplicationTests - Starting CalculatorApplicationTests using Java 17.0.15 with PID 3778 (started by franciscocordeiro in /Users/franciscocordeiro/Desktop/WITChallenge/calculator)
-2025-08-04 19:13:39 [main] INFO  c.e.c.CalculatorApplicationTests - No active profile set, falling back to 1 default profile: "default"
-2025-08-04 19:13:39 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+2025-08-05 19:06:32 [main] INFO  c.e.c.CalculatorApplicationTests - Starting CalculatorApplicationTests using Java 17.0.15 with PID 16013 (started by franciscocordeiro in /Users/franciscocordeiro/Desktop/WITChallenge/calculator)
+2025-08-05 19:06:32 [main] INFO  c.e.c.CalculatorApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-08-05 19:06:33 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
 	allow.auto.create.topics = true
 	auto.commit.interval.ms = 5000
 	auto.include.jmx.reporter = true
@@ -100,35 +100,169 @@
 	ssl.truststore.type = JKS
 	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
 
-2025-08-04 19:13:40 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector
-2025-08-04 19:13:40 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.9.1
-2025-08-04 19:13:40 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: f745dfdcee2b9851
-2025-08-04 19:13:40 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1754331220142
-2025-08-04 19:13:40 [main] INFO  o.a.k.c.c.i.ClassicKafkaConsumer - [Consumer clientId=consumer-calculation-group-1, groupId=calculation-group] Subscribed to topic(s): calculation-topic
-2025-08-04 19:13:40 [main] INFO  c.e.c.CalculatorApplicationTests - Started CalculatorApplicationTests in 1.341 seconds (process running for 2.37)
-2025-08-04 19:13:41 [main] INFO  c.e.c.kafka.CalculationConsumer - Received calculation request: CalculationRequest(operation=DIVIDE, firstOperand=10, secondOperand=0, idRequest=c799d6d5-8c18-4cb9-8217-193f68c043d9)
-2025-08-04 19:13:41 [main] ERROR c.e.c.kafka.CalculationConsumer - Division by zero attempted for request ID: c799d6d5-8c18-4cb9-8217-193f68c043d9
-2025-08-04 19:13:41 [main] INFO  c.e.c.kafka.CalculationConsumer - Finished processing request ID: c799d6d5-8c18-4cb9-8217-193f68c043d9
-2025-08-04 19:13:41 [main] INFO  c.e.c.kafka.CalculationConsumer - Received calculation request: CalculationRequest(operation=SUM, firstOperand=10, secondOperand=5, idRequest=8651b561-0d24-4930-acc2-829b1178c6cf)
-2025-08-04 19:13:41 [main] INFO  c.e.c.kafka.CalculationConsumer - Calculated result for request ID: 8651b561-0d24-4930-acc2-829b1178c6cf - Result: 15
-2025-08-04 19:13:41 [main] INFO  c.e.c.kafka.CalculationConsumer - Finished processing request ID: 8651b561-0d24-4930-acc2-829b1178c6cf
-2025-08-04 19:13:41 [main] INFO  c.e.c.kafka.CalculationConsumer - Received calculation request: CalculationRequest(operation=SUBTRACT, firstOperand=10, secondOperand=5, idRequest=2f06fac0-80bb-486c-bb24-e0f1f6b6a64c)
-2025-08-04 19:13:41 [main] INFO  c.e.c.kafka.CalculationConsumer - Calculated result for request ID: 2f06fac0-80bb-486c-bb24-e0f1f6b6a64c - Result: 5
-2025-08-04 19:13:41 [main] INFO  c.e.c.kafka.CalculationConsumer - Finished processing request ID: 2f06fac0-80bb-486c-bb24-e0f1f6b6a64c
-2025-08-04 19:13:41 [main] INFO  c.e.c.kafka.CalculationConsumer - Received calculation request: CalculationRequest(operation=DIVIDE, firstOperand=10, secondOperand=5, idRequest=5f7ba5db-3e20-4a06-85da-3da8b7a2641a)
-2025-08-04 19:13:41 [main] INFO  c.e.c.kafka.CalculationConsumer - Calculated result for request ID: 5f7ba5db-3e20-4a06-85da-3da8b7a2641a - Result: 2
-2025-08-04 19:13:41 [main] INFO  c.e.c.kafka.CalculationConsumer - Finished processing request ID: 5f7ba5db-3e20-4a06-85da-3da8b7a2641a
-2025-08-04 19:13:41 [main] INFO  c.e.c.kafka.CalculationConsumer - Received calculation request: CalculationRequest(operation=MULTIPLY, firstOperand=10, secondOperand=5, idRequest=f471209d-78eb-417d-a3dc-34d362514f7c)
-2025-08-04 19:13:41 [main] INFO  c.e.c.kafka.CalculationConsumer - Calculated result for request ID: f471209d-78eb-417d-a3dc-34d362514f7c - Result: 50
-2025-08-04 19:13:41 [main] INFO  c.e.c.kafka.CalculationConsumer - Finished processing request ID: f471209d-78eb-417d-a3dc-34d362514f7c
-2025-08-04 19:13:41 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-calculation-group-1, groupId=calculation-group] Resetting generation and member id due to: consumer pro-actively leaving the group
-2025-08-04 19:13:41 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-calculation-group-1, groupId=calculation-group] Request joining group due to: consumer pro-actively leaving the group
-2025-08-04 19:13:41 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ClassicKafkaConsumer - [Consumer clientId=consumer-calculation-group-1, groupId=calculation-group] Unsubscribed all topics or patterns and assigned partitions
-2025-08-04 19:13:41 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-calculation-group-1, groupId=calculation-group] Resetting generation and member id due to: consumer pro-actively leaving the group
-2025-08-04 19:13:41 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-calculation-group-1, groupId=calculation-group] Request joining group due to: consumer pro-actively leaving the group
-2025-08-04 19:13:41 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
-2025-08-04 19:13:41 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2025-08-04 19:13:41 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
-2025-08-04 19:13:41 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
-2025-08-04 19:13:41 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-calculation-group-1 unregistered
-2025-08-04 19:13:41 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - calculation-group: Consumer stopped
+2025-08-05 19:06:33 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector
+2025-08-05 19:06:33 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.9.1
+2025-08-05 19:06:33 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: f745dfdcee2b9851
+2025-08-05 19:06:33 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1754417193835
+2025-08-05 19:06:33 [main] INFO  o.a.k.c.c.i.ClassicKafkaConsumer - [Consumer clientId=consumer-calculation-group-1, groupId=calculation-group] Subscribed to topic(s): calculation-topic
+2025-08-05 19:06:33 [main] INFO  c.e.c.CalculatorApplicationTests - Started CalculatorApplicationTests in 1.301 seconds (process running for 2.173)
+2025-08-05 19:06:34 [main] INFO  c.e.c.kafka.CalculationConsumer - Received calculation request: CalculationRequest(operation=DIVIDE, firstOperand=10, secondOperand=0, idRequest=d4e4caed-ad33-4bb6-867f-7388cf2af63e)
+2025-08-05 19:06:34 [main] ERROR c.e.c.kafka.CalculationConsumer - Division by zero attempted for request ID: d4e4caed-ad33-4bb6-867f-7388cf2af63e
+2025-08-05 19:06:34 [main] INFO  c.e.c.kafka.CalculationConsumer - Finished processing request ID: d4e4caed-ad33-4bb6-867f-7388cf2af63e
+2025-08-05 19:06:34 [main] INFO  c.e.c.kafka.CalculationConsumer - Received calculation request: CalculationRequest(operation=SUM, firstOperand=14, secondOperand=5, idRequest=2450af02-ce1b-45b1-97bd-562e74c84c6f)
+2025-08-05 19:06:34 [main] INFO  c.e.c.kafka.CalculationConsumer - Calculated result for request ID: 2450af02-ce1b-45b1-97bd-562e74c84c6f - Result: 19
+2025-08-05 19:06:34 [main] INFO  c.e.c.kafka.CalculationConsumer - Finished processing request ID: 2450af02-ce1b-45b1-97bd-562e74c84c6f
+2025-08-05 19:06:34 [main] INFO  c.e.c.kafka.CalculationConsumer - Received calculation request: CalculationRequest(operation=SUBTRACT, firstOperand=15, secondOperand=5, idRequest=4e88e9e6-e918-43a9-bf04-23ab5cd56113)
+2025-08-05 19:06:34 [main] INFO  c.e.c.kafka.CalculationConsumer - Calculated result for request ID: 4e88e9e6-e918-43a9-bf04-23ab5cd56113 - Result: 10
+2025-08-05 19:06:34 [main] INFO  c.e.c.kafka.CalculationConsumer - Finished processing request ID: 4e88e9e6-e918-43a9-bf04-23ab5cd56113
+2025-08-05 19:06:34 [main] INFO  c.e.c.kafka.CalculationConsumer - Received calculation request: CalculationRequest(operation=DIVIDE, firstOperand=5, secondOperand=5, idRequest=27110a51-d306-4bc5-8496-fd9458614d3e)
+2025-08-05 19:06:34 [main] INFO  c.e.c.kafka.CalculationConsumer - Calculated result for request ID: 27110a51-d306-4bc5-8496-fd9458614d3e - Result: 1
+2025-08-05 19:06:34 [main] INFO  c.e.c.kafka.CalculationConsumer - Finished processing request ID: 27110a51-d306-4bc5-8496-fd9458614d3e
+2025-08-05 19:06:34 [main] INFO  c.e.c.kafka.CalculationConsumer - Received calculation request: CalculationRequest(operation=MULTIPLY, firstOperand=12, secondOperand=5, idRequest=7ac10f91-ff06-4a51-8a69-9599738eb51a)
+2025-08-05 19:06:34 [main] INFO  c.e.c.kafka.CalculationConsumer - Calculated result for request ID: 7ac10f91-ff06-4a51-8a69-9599738eb51a - Result: 60
+2025-08-05 19:06:34 [main] INFO  c.e.c.kafka.CalculationConsumer - Finished processing request ID: 7ac10f91-ff06-4a51-8a69-9599738eb51a
+2025-08-05 19:06:34 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-calculation-group-1, groupId=calculation-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2025-08-05 19:06:34 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-calculation-group-1, groupId=calculation-group] Request joining group due to: consumer pro-actively leaving the group
+2025-08-05 19:06:34 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ClassicKafkaConsumer - [Consumer clientId=consumer-calculation-group-1, groupId=calculation-group] Unsubscribed all topics or patterns and assigned partitions
+2025-08-05 19:06:34 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-calculation-group-1, groupId=calculation-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2025-08-05 19:06:34 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-calculation-group-1, groupId=calculation-group] Request joining group due to: consumer pro-actively leaving the group
+2025-08-05 19:06:34 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-08-05 19:06:34 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-08-05 19:06:34 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2025-08-05 19:06:34 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-08-05 19:06:35 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-calculation-group-1 unregistered
+2025-08-05 19:06:35 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - calculation-group: Consumer stopped
+2025-08-05 19:08:23 [main] INFO  c.e.c.CalculatorApplicationTests - Starting CalculatorApplicationTests using Java 17.0.15 with PID 16107 (started by franciscocordeiro in /Users/franciscocordeiro/Desktop/WITChallenge/calculator)
+2025-08-05 19:08:23 [main] INFO  c.e.c.CalculatorApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-08-05 19:08:24 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [kafka:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-calculation-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = calculation-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2025-08-05 19:08:24 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector
+2025-08-05 19:08:24 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.9.1
+2025-08-05 19:08:24 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: f745dfdcee2b9851
+2025-08-05 19:08:24 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1754417304177
+2025-08-05 19:08:24 [main] INFO  o.a.k.c.c.i.ClassicKafkaConsumer - [Consumer clientId=consumer-calculation-group-1, groupId=calculation-group] Subscribed to topic(s): calculation-topic
+2025-08-05 19:08:24 [main] INFO  c.e.c.CalculatorApplicationTests - Started CalculatorApplicationTests in 1.141 seconds (process running for 1.945)
+2025-08-05 19:08:24 [main] INFO  c.e.c.kafka.CalculationConsumer - Received calculation request: CalculationRequest(operation=DIVIDE, firstOperand=10, secondOperand=0, idRequest=615d2288-47ee-4664-a2bd-7cea06ae4f13)
+2025-08-05 19:08:24 [main] ERROR c.e.c.kafka.CalculationConsumer - Division by zero attempted for request ID: 615d2288-47ee-4664-a2bd-7cea06ae4f13
+2025-08-05 19:08:24 [main] INFO  c.e.c.kafka.CalculationConsumer - Finished processing request ID: 615d2288-47ee-4664-a2bd-7cea06ae4f13
+2025-08-05 19:08:25 [main] INFO  c.e.c.kafka.CalculationConsumer - Received calculation request: CalculationRequest(operation=SUM, firstOperand=14, secondOperand=5, idRequest=87c5cd1c-7517-4110-afc5-b2fe16f9e666)
+2025-08-05 19:08:25 [main] INFO  c.e.c.kafka.CalculationConsumer - Calculated result for request ID: 87c5cd1c-7517-4110-afc5-b2fe16f9e666 - Result: 19
+2025-08-05 19:08:25 [main] INFO  c.e.c.kafka.CalculationConsumer - Finished processing request ID: 87c5cd1c-7517-4110-afc5-b2fe16f9e666
+2025-08-05 19:08:25 [main] INFO  c.e.c.kafka.CalculationConsumer - Received calculation request: CalculationRequest(operation=SUBTRACT, firstOperand=15, secondOperand=5, idRequest=96347fb9-1bed-4af5-b5df-c84174d13a3f)
+2025-08-05 19:08:25 [main] INFO  c.e.c.kafka.CalculationConsumer - Calculated result for request ID: 96347fb9-1bed-4af5-b5df-c84174d13a3f - Result: 10
+2025-08-05 19:08:25 [main] INFO  c.e.c.kafka.CalculationConsumer - Finished processing request ID: 96347fb9-1bed-4af5-b5df-c84174d13a3f
+2025-08-05 19:08:25 [main] INFO  c.e.c.kafka.CalculationConsumer - Received calculation request: CalculationRequest(operation=DIVIDE, firstOperand=5, secondOperand=5, idRequest=ef0a1f86-bdb8-495f-9d79-fffae01b4e5b)
+2025-08-05 19:08:25 [main] INFO  c.e.c.kafka.CalculationConsumer - Calculated result for request ID: ef0a1f86-bdb8-495f-9d79-fffae01b4e5b - Result: 1
+2025-08-05 19:08:25 [main] INFO  c.e.c.kafka.CalculationConsumer - Finished processing request ID: ef0a1f86-bdb8-495f-9d79-fffae01b4e5b
+2025-08-05 19:08:25 [main] INFO  c.e.c.kafka.CalculationConsumer - Received calculation request: CalculationRequest(operation=MULTIPLY, firstOperand=12, secondOperand=5, idRequest=ef2bcffb-4c90-4495-9f1a-11b8f943b247)
+2025-08-05 19:08:25 [main] INFO  c.e.c.kafka.CalculationConsumer - Calculated result for request ID: ef2bcffb-4c90-4495-9f1a-11b8f943b247 - Result: 60
+2025-08-05 19:08:25 [main] INFO  c.e.c.kafka.CalculationConsumer - Finished processing request ID: ef2bcffb-4c90-4495-9f1a-11b8f943b247
+2025-08-05 19:08:25 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-calculation-group-1, groupId=calculation-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2025-08-05 19:08:25 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-calculation-group-1, groupId=calculation-group] Request joining group due to: consumer pro-actively leaving the group
+2025-08-05 19:08:25 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ClassicKafkaConsumer - [Consumer clientId=consumer-calculation-group-1, groupId=calculation-group] Unsubscribed all topics or patterns and assigned partitions
+2025-08-05 19:08:25 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-calculation-group-1, groupId=calculation-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2025-08-05 19:08:25 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-calculation-group-1, groupId=calculation-group] Request joining group due to: consumer pro-actively leaving the group
+2025-08-05 19:08:25 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-08-05 19:08:25 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-08-05 19:08:25 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2025-08-05 19:08:25 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-08-05 19:08:25 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-calculation-group-1 unregistered
+2025-08-05 19:08:25 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - calculation-group: Consumer stopped
